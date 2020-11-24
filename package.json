@@ -1,0 +1,14 @@
+{
+  "name": "qs41-prototype",
+  "version": "1.0.0",
+  "description": "Protoype to demonstrate how the QS41 picklists might work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liam Gooch",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
