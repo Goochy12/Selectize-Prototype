@@ -81,11 +81,11 @@ function buildOutputConString() {
     }
 
     if (subCatSelect) {
-        str += " - " + subCatSelect;
+        str += " --- " + subCatSelect;
     }
 
     if (posSelect.length > 0) {
-        str += " - ";
+        str += " --- ";
         for (let i = 0; i < posSelect.length; i++) {
             str += posSelect[i];
             if (i !== posSelect.length - 1) {
@@ -95,7 +95,7 @@ function buildOutputConString() {
     }
 
     if (taskSelect.length > 0) {
-        str += " - ";
+        str += " --- ";
         for (let i = 0; i < taskSelect.length; i++) {
             str += taskSelect[i];
             if (i !== taskSelect.length - 1) {
