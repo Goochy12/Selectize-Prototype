@@ -12,6 +12,11 @@ app.get('/script.js', (req, res) => {
     res.sendFile(path.join(__dirname + '/script.js'));
 });
 
+app.get('/data.js', (req, res) => {
+    res.sendFile(path.join(__dirname + '/data.js'));
+});
+
+
 app.get('/selectize.js', (req, res) => {
     res.sendFile(path.join(__dirname + '/selectize.js'));
 });
@@ -20,6 +25,6 @@ app.get('/selectize.css', (req, res) => {
     res.sendFile(path.join(__dirname + '/selectize.css'));
 });
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log('Listening on Port 8000');
 });
