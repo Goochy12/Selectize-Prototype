@@ -34,26 +34,85 @@ window.onload = function () {
         categorySelect.appendChild(el);
     };
 
-    $('#categorySelect').selectize({
+    var $catSelect = $('#categorySelect').selectize({
         maxItems: 1,
-        placeholder: "Select a Category..."
+        placeholder: "Select a Category...",
+        onChange: (value) => {
+            catSelect = value;
+            buildOutputConString();
+        }
     });
 
-    $('#subcategorySelect').selectize({
+    var $subCatSelect = $('#subcategorySelect').selectize({
         maxItems: 1,
-        placeholder: "Select a Sub Category..."
+        placeholder: "Select a Sub Category...",
+        onChange: (value) => {
+            subCatSelect = value;
+            buildOutputConString();
+        }
     });
 
-    $('#positionSelect').selectize({
+    var $posSelect = $('#positionSelect').selectize({
         placeholder: "Select a Position...",
-        maxItems: null
+        maxItems: null,
+        onChange: (value) => {
+            posSelect = value;
+            buildOutputConString();
+        }
     });
 
-    $('#taskSelect').selectize({
+    var $taskSelect = $('#taskSelect').selectize({
         placeholder: "Select a Task...",
-        maxItems: null
+        maxItems: null,
+        onChange: (value) => {
+            taskSelect = value;
+            buildOutputConString();
+        }
     });
+
+
 };
+
+function buildOutputConString() {
+    var str = "";
+
+    if (catSelect) {
+        str += catSelect
+    }
+
+    if (subCatSelect) {
+        str += " - " + subCatSelect;
+    }
+
+    if (posSelect.length > 0) {
+        str += " - ";
+        for (let i = 0; i < posSelect.length; i++) {
+            str += posSelect[i];
+            if (i !== posSelect.length - 1) {
+                str += ", ";
+            }
+        }
+    }
+
+    if (taskSelect.length > 0) {
+        str += " - ";
+        for (let i = 0; i < taskSelect.length; i++) {
+            str += taskSelect[i];
+            if (i !== taskSelect.length - 1) {
+                str += ", ";
+            }
+        }
+    }
+
+    console.log(str)
+    var displayString = document.getElementById("outputConString");
+    displayString.innerHTML = str;
+}
+
+var catSelect = ""
+var subCatSelect = ""
+var posSelect = []
+var taskSelect = []
 
 
 
