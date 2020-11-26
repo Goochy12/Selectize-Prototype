@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Protoype to demonstrate how the QS41 picklists might work",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +14,10 @@
     "jquery": "^3.5.1",
     "jsdom": "^16.4.0",
     "selectize": "^0.12.6"
+  },
+  "pkg": {
+    "assets": [
+      "*"
+    ]
   }
 }
