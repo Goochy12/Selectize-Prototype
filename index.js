@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const open = require("open");
 
 const path = require('path');
 
@@ -26,5 +27,7 @@ app.get('/selectize.css', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Listening on Port 8000');
+    console.log('Opened on Chrome at http://localhost:8000');
+    console.log("If Google Chrome is not installed, please head to the above URL on any browser EXCEPT for Internet Explorer.")
+    open("http://localhost:8000", { app: "chrome" });
 });
